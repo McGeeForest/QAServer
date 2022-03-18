@@ -21,13 +21,15 @@ import router from "./router";
 import Argon from "./plugins/argon-kit";
 import './registerServiceWorker'
 import axios from 'axios'
+import FormatDate from './plugins/FormatDate';
 Vue.config.productionTip = false;
 Vue.use(Argon);
+Vue.use(FormatDate)    // 转换日期的函数
 Vue.prototype.$axios=axios
 import qs from "qs"
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
-  console.log("拦截");
+  // console.log("拦截");
     // 参数格式转换
     if(config.method=="post"){
         config.data = qs.stringify(config.data);
@@ -40,12 +42,10 @@ axios.interceptors.request.use(function (config) {
 axios.interceptors.response.use(res => {
   return res.data;
 })
-// Vue.prototype.HOST='/apis'
-axios.defaults.baseURL='http://10.9.20.17:7526/'
+
+axios.defaults.baseURL='http://10.9.20.17:7526/'    // 跨域必备设置，不需要配置vue.config.js
 new Vue({
   axios,
   router,
   render: h => h(App)
 }).$mount("#app");
-import FormatDate from './plugins/FormatDate';
-Vue.use(FormatDate)

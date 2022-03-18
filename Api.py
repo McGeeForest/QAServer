@@ -69,7 +69,5 @@ def userList():
     return messageBean.setSuccessMsg(dataService.userList)
 
 
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=7526, debug=True)

@@ -1,7 +1,6 @@
 <template>
     <div>
         <hero></hero>
-        Hello World
     </div>
 </template>
 <script>

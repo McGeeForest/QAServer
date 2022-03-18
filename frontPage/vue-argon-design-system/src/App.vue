@@ -10,13 +10,13 @@
     </div>
 </template>
 <style>
-    .hidden-y::-webkit-scrollbar{
-        display:none
-    }
-    .hidden-y {
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-    }
+.hidden-y::-webkit-scrollbar{
+    display:none
+}
+.hidden-y {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
 </style>
 <script>
 import { FadeTransition } from "vue2-transitions";
