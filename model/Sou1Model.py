@@ -1,5 +1,3 @@
-import sys
-sys.path.append("/home/student/zoushulin/project/transNetsQANew/src3/")
 from torch import nn
 import torch
 from model import CNNTextExtracterWithMHSelfAttion as TextExtracter

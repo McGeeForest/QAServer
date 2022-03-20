@@ -1,15 +1,12 @@
-from tkinter import E
 import torch
 import nltk
 import pandas as pd
-import _thread
 from nltk.tokenize import sent_tokenize
 from transformers import AlbertModel, AlbertTokenizer
 from model import Sou1Model
 from util import ModelUtil as modelUtil
 class ModelService():
     def __init__(self, modelPath, dataService):
-        src = '/home/zsl/projects/project/QAData/'
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         # 创建参数列表：
         param = {}
@@ -49,7 +46,6 @@ class ModelService():
         print(" *** 模型及优化器初始化完成")
     
     def pred(self, q_text_batch, u_his_batch):
-        data = "run predict."
         q_vec_batch, q_real_len = modelUtil.excutALBert(q_text_batch, self.bertTokenizer, self.bertModel, self.sen_tokenizer, self.device)
         u_his_vec_batch, u_his_real_len = modelUtil.excutALBert(u_his_batch, self.bertTokenizer, self.bertModel, self.sen_tokenizer, self.device)
         q_real_len = torch.Tensor(q_real_len) # 代表每个句子的长度
@@ -71,9 +67,6 @@ class ModelService():
         # predExperts['userId']=userList
         # predExperts['prob']=probList
         return userList, probList
-        topExperts = predExperts.sort_values(by='prob', ascending=False).head(10)
-        print(topExperts)
-        return[9656320, 1830916, 5210117, 1712135, 571407, 5285908, 1206301, 5914654]
     
     def getExpertsThreading(self, qText, userList):
         predExperts = pd.DataFrame()
@@ -82,6 +75,6 @@ class ModelService():
         predExperts['userId']=userList
         predExperts['prob']=probList
         topExperts = predExperts.sort_values(by='prob', ascending=False).head(10)
-        print(topExperts)
+        # print(topExperts)
         return [[str(row['userId']), format(row['prob']*100,'.2f')] for index, row in topExperts.iterrows()]
 

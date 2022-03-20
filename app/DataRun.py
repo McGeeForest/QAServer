@@ -1,8 +1,5 @@
 # 生成所有用户的历史回答记录，返回dict
-from select import select
 from util import DataUtil
-import pandas as pd
-import numpy as np
 class DataService():
     def __init__(self, data_path):
         self.allQASet = DataUtil.readQASet(data_path)        # 数据集
