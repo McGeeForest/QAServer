@@ -39,7 +39,7 @@ python Api.py
 
 ```
 cd ./frontpage/vue-argon-design-system/
-npm run install
+npm install
 ```
 
 
