@@ -3,6 +3,7 @@ import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
 import Pred from "./views/Pred.vue";
 import ShowHis from "./views/ShowHis.vue";
+import modelPresentation from "./views/modelPresentation.vue";
 import Start from "./views/Starter.vue";
 
 Vue.use(Router);
@@ -32,6 +33,14 @@ export default new Router({
       components: {
         header: AppHeader,
         default: ShowHis
+      }
+    },
+    {
+      path: "/modelPresentation",
+      name: "modelPresentation",
+      components: {
+        header: AppHeader,
+        default: modelPresentation
       }
     }
   ],

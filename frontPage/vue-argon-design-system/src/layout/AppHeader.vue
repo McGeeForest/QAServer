@@ -28,11 +28,21 @@
                         <a href="/#/pred"
                            class="media d-flex align-items-center">
                             <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                <i class="ni ni-ui-04"></i>
+                                <i class="ni ni-app"></i>
                             </div>
                             <div class="media-body ml-3">
                                 <h5 class="heading text-warning mb-md-1">输入问题执行预测</h5>
                                 <p class="description d-none d-md-inline-block mb-0">提交一个问题，系统返回潜在的专家用户</p>
+                            </div>
+                        </a>
+                        <a href="/#/modelPresentation"
+                           class="media d-flex align-items-center">
+                            <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                <i class="ni ni-shop"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                                <h5 class="heading text-warning mb-md-1">论文模型设计展示</h5>
+                                <p class="description d-none d-md-inline-block mb-0">基于表示学习的程序问答社区专家推荐研究</p>
                             </div>
                         </a>
                     </div>
